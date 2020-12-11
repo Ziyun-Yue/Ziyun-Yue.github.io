@@ -9,7 +9,7 @@ var data = {
 marqueePace: 1,//滚动速度
 marqueeDistance: 0,//初始滚动距离
 marquee_margin: 20,
-size:14,
+size:10,
 interval: 40, // 时间间隔
 infoSelected: false,
 text: '我想什么时候出就出，想什么时候回就回，你管不着，Hhhh!',
