@@ -11,7 +11,6 @@ marqueeDistance: 0,//初始滚动距离
 marquee_margin: 20,
 size:14,
 interval: 40, // 时间间隔
-
 infoSelected: false,
 text: '我想什么时候出就出，想什么时候回就回，你管不着，Hhhh!',
 io: [
@@ -20,7 +19,7 @@ io: [
 ], //进出校门
 names:['张三', '李四', '王五'],
 customName: 'null',
-auth: '授权有效!',
+auth: '研究生用户，入校授权有效!',
 time: 'asdasdadaded qeqc',
 userInfo: {},
 hasUserInfo: false,
@@ -29,21 +28,19 @@ hasUserInfo: false,
 function radiochange(e) {
 
 }
-/*
-$('input[type=radio][name=io]').change(function () {
-console.log("radiochange");
-console.log("radiochange"+$("input[name='io']:checked").val());
-if($("input[name='io']:checked").val() == 0){
-console.log($("input[name='io']:checked").val());
-document.getElementById("auth").innerHTML="研究生用户，出校授权有效！";
-}
-else{
-console.log($("input[name='io']:checked").val());
-document.getElementById("auth").innerHTML="研究生用户，入校授权有效！";
-}
-})
-*/
 
+// $('input[type=radio][name=io]').change(function () {
+// console.log("radiochange");
+// console.log("radiochange"+$("input[name='io']:checked").val());
+// if($("input[name='io']:checked").val() == 0){
+// console.log($("input[name='io']:checked").val());
+// document.getElementById("auth").innerHTML="研究生用户，出校授权有效！";
+// }
+// else{
+// console.log($("input[name='io']:checked").val());
+// document.getElementById("auth").innerHTML="研究生用户，入校授权有效！";
+// }
+// })
 
 
 function namechange() {
@@ -55,6 +52,7 @@ $("#infoselected").click(function(){
 $("div.info").hide();
 data.time = formatTime(new Date())
 console.log(data.time)
+// document.getElementById("time").innerHTML = data.time;
 document.getElementById("time").innerHTML = data.time;
 });
 
@@ -65,18 +63,16 @@ const day = date.getDate()
 const hour = date.getHours()
 const minute = date.getMinutes()
 const second = date.getSeconds()
-
-return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+var space = ""
+for(var i = 0;i < 8;i++)
+    space += '&nbsp;'
+return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')+space
 }
 
 const formatNumber = n => {
 n = n.toString()
 return n[1] ? n : '0' + n
 }
-
-
-
-
 
 
 //事件处理函数
